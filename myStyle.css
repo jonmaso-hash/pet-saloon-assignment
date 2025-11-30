@@ -1,0 +1,161 @@
+.video-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+body{
+  background-color: lightblue;
+}
+.body-class{
+  lighting-color: lightblue;
+}
+
+.header-index{
+    background:black;
+    background-size: cover;
+    height: 200px;
+    color:white;
+    text-align: center;
+}
+
+.header-index2{
+     background-image: url(./Images/pele5.jpg);
+    background-size: cover;
+    height: 800px;
+    width: 1550px;
+    color:white;
+    text-align: center;
+    background-color: white;
+    
+}
+
+.footer-index{
+    background-color: black;
+    height: auto;
+    color:white;
+    text-align: center;
+}
+
+
+.card{
+  display: flex;
+  display: inline-flex;
+justify-content: space-evenly;
+ margin: 70px;
+}
+
+.h1-div{
+  color: brown;
+  text-align: center;
+}
+
+.pet-in-salon{
+ display: flex;
+}
+
+.banner-div{
+  text-align: center;
+  background-color: blueviolet;
+  color: yellow;
+}
+
+.info-banner{
+  text-align: center;
+  background-color: yellow;
+  color:purple;
+}
+
+.section-flex{
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.section-flex2{
+flex-direction: row;
+}
+
+.card-body2{
+  background-color: white;
+  width: 16rem;
+}
+
+.section-flex3{
+  display: inline-flex
+}
+
+.price-color{
+  color: black;
+  background-color: pink;
+}
+
+.input-error {
+    border: 2px solid red !important;
+}
+
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    padding: 0px;
+}
+
+/*---Variables----*/
+/* Define the color variables with light mode by default*/
+
+:root{
+    --background-color: #f4f4f4;
+    --surface--color: #fdfdff;
+    --text-color:#1a27a4;
+    --button--color: #008fff; 
+}
+
+.dark-mode{
+    --background-color: #1a274a;
+    --surface-color: #23345a;
+    --text-color:#f4f4fb;
+    --button-color: #45adff; 
+}
+
+/*---General-*/
+body{
+    background-color: var(--background-color);
+    transition: background-color 0.6s ease, color 0.3s ease;
+}
+
+
+/*---TEXT STYLE-*/
+h1, h2, p{
+color: var(--text-color)
+}
+
+/*-------COMPONENTS-----*/
+
+/*-------LAYOUT-----*/
+#imageContainer{
+    width: 7%;
+}
+
+#imageContainer img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+
