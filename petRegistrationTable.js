@@ -1,6 +1,3 @@
-
-
-
 function pet(name, age, breed, gender, service, email) {
     this.name = name;
     this.age = age;
@@ -10,6 +7,14 @@ function pet(name, age, breed, gender, service, email) {
     this.email = email;
 }
 
+
+$(document).ready(function () {
+    const pets = JSON.parse(localStorage.getItem("pets")) || [];
+    pets.forEach(p => {
+        const loadedPet = new pet(p.name, p.age, p.breed, p.gender, p.service, p.email);
+        $("#petTable").append(addRow(loadedPet));
+    });
+});
 
 $("#registrationForm").on("submit", function (event) {
     event.preventDefault(); 
@@ -21,6 +26,7 @@ $("#registrationForm").on("submit", function (event) {
     $("#registrationForm input[required], #registrationForm select[required]").each(function () {
         if ($(this).val().trim() === "") {
             $(this).css("border", "solid 2px red");
+            isValid = false;
         }
     });
 
@@ -32,8 +38,8 @@ $("#registrationForm").on("submit", function (event) {
     onSubmit();
 });
 
-function onSubmit() {
 
+function onSubmit() {
     const name = $("#petName").val();
     const age = $("#petAge").val();
     const breed = $("#petBreed").val();
@@ -43,15 +49,25 @@ function onSubmit() {
 
     const newPet = new pet(name, age, breed, gender, service, email);
 
-    const $row = addRow(newPet);
-    $("#petTable").append($row);
+   
+    $("#petTable").append(addRow(newPet));
 
+   
+    savePetToLocalStorage(newPet);
+
+ 
     $("#registrationForm")[0].reset(); 
 }
 
-   $("#changeModeButton").click(function(){
-    //Apply or remove the dark-mode class
-$("body").toggleClass("dark-mode");
+
+function savePetToLocalStorage(newPet) {
+    const pets = JSON.parse(localStorage.getItem("pets")) || [];
+    pets.push(newPet);
+    localStorage.setItem("pets", JSON.stringify(pets));
+}
+
+$("#changeModeButton").click(function(){
+    $("body").toggleClass("dark-mode");
 });
 
 
@@ -69,14 +85,13 @@ function addRow(newPet) {
         </tr>
     `);
 
-    
     $row.find(".edit-btn").on("click", function () {
         alert("Edit button clicked");
     });
 
-    
     $row.find(".delete-btn").on("click", function () {
         if (confirm("Are you sure you want to delete this row?")) {
+            deletePetFromLocalStorage(newPet);
             $row.remove();
         }
     });
