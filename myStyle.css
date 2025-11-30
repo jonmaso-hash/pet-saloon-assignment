@@ -15,11 +15,23 @@
   overflow: hidden;
 }
 
-body{
+.mood-class{
+  text-align: right;
+}
+
+.margin-top{
+  margin-top: 5%;
+}
+
+.lightblue-body{
   background-color: lightblue;
 }
 .body-class{
   lighting-color: lightblue;
+}
+
+.center-nav{
+  text-align: center;
 }
 
 .header-index{
@@ -134,22 +146,7 @@ body{
 }
 
 
-/*---TEXT STYLE-*/
-h1, h2, p{
-color: var(--text-color)
-}
 
-/*-------COMPONENTS-----*/
-
-/*-------LAYOUT-----*/
-#imageContainer{
-    width: 7%;
-}
-
-#imageContainer img{
-    width: 100%;
-    border-radius: 100%;
-}
 
 
 
